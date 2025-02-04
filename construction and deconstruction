@@ -1,0 +1,71 @@
+//CONSTRUCTORS AND DECONSTRUCTION
+#include <iostream>
+using namespace std;
+
+class Shape{
+    protected:
+    	double length=0,height=0,base=0;
+    	double radius=base/2;
+    	public:
+    	void getDimension();
+};
+void Shape::getDimension(){
+    if(length > 0){
+        cout<<"The length is "<<length<<endl;
+    }
+     if(height > 0){
+        cout<<"The height is "<< height<<endl;
+}
+    if(base > 0){
+        cout<<"The base is "<<base<<endl;
+} 
+    if(radius > 0){
+        cout<<"The radius is "<<radius<<endl;
+}
+}
+
+class pyramid:public Shape{
+    public:
+    pyramid(double b, double h);
+    void pyramid_vol();
+};
+
+pyramid::pyramid(double b, double h){
+base = b;
+height = h;
+};
+
+
+
+
+
+
+
+class cone: public Shape{
+    public:
+    cone(double r, double h);
+    void cone_vol();
+
+};
+cone::cone(double r,double h){
+    radius=r;
+    height=h;
+};
+
+void cone::cone_vol(){
+    double vol=0;
+    vol=3.1415926*(radius*radius*height)/3;
+    cout<<"The volume of cone is "<<vol<<endl;
+}
+ int main(){
+    //pyramid smallpyra(2,4);
+    //smallPyra.getDimension();
+    //smallPyra.getDimension();
+    
+    cone bigcone(5,20);
+    bigcone.getDimension();
+    bigcone.cone_vol();
+    return 0;
+}
+
+
